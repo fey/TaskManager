@@ -12,3 +12,9 @@ compose-install:
 
 compose-bash-service-ports:
 	docker-compose run --rm --service-ports web /bin/bash
+
+compose-migrate:
+	docker-compose run --rm web bash -c "rails db:create db:migrate"
+
+start:
+	docker-compose up
