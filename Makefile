@@ -16,9 +16,6 @@ compose-bash-service-ports:
 compose-bash:
 	docker-compose run --rm web /bin/bash
 
-compose-migrate:
-	docker-compose run --rm web bash -c "rails db:create db:migrate"
-
 compose-lint-fix:
 	docker-compose run --rm web bash -c "make lint-fix"
 
