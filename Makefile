@@ -28,5 +28,13 @@ lint-fix:
 lint:
 	bundle exec rubocop
 
-start:
+compose:
 	docker-compose up
+
+start:
+	bundle exec rails s -b '0.0.0.0' -p 3000
+
+test:
+	rails test
+
+.PHONY: test
