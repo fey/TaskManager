@@ -28,6 +28,16 @@ lint-fix:
 lint:
 	bundle exec rubocop
 
+lint-js-fix:
+	yarn run lint-fix
+
+lint-js:
+	yarn run lint
+
+lint-all: lint lint-js
+
+lint-fix-all: lint-fix lint-js-fix
+
 compose:
 	docker-compose up
 
