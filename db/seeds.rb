@@ -18,3 +18,12 @@ admin.save
   u.password = "#{i}"
   u.save
 end
+
+10.times do |i|
+  t = Task.new
+  t.name = "Task #{i}"
+  t.description = "Description #{i}"
+  t.author = User.first
+  t.state = 'new_task'
+  t.save
+end
