@@ -8,7 +8,7 @@ compose-build:
 	docker-compose build
 
 compose-install:
-	docker-compose run --rm web bash -c "bundle install"
+	docker-compose run --rm web bash -c "make install"
 
 compose-bash-service-ports:
 	docker-compose run --rm --service-ports web /bin/bash
@@ -21,6 +21,10 @@ compose-lint-fix:
 
 compose-lint:
 	docker-compose run --rm web bash -c "make lint"
+
+install:
+	bundle install
+	yarn
 
 lint-fix:
 	bundle exec rubocop -a
